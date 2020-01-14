@@ -10,7 +10,8 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
-            Player player = new Player("computer", 1, 1);
+            //game object 
+           
         }
     }
 }

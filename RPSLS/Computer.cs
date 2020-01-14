@@ -11,12 +11,16 @@ namespace RPSLS
         // MEMBER VARIABLES
         
         // CONSTRUCTOR
-        public Computer
+        public Computer()
         {
-            
+            name = "CPU";
         }
 
         // MEMBERS MEMBER
+        public override void ChooseGesture()
+        {
+
+        }
 
     }
 }

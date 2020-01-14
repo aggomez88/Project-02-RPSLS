@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public class Player : Game
+    public abstract class Player : Game
     {
         // MEMBER VARIABLES
         public string name;
@@ -17,29 +17,18 @@ namespace RPSLS
         
 
         // CONSTRUCTOR
-        public Player(string name, int score, int gesture )
+        public Player()
         {
-            this.name = name;
-            this.score = 0;
-            this.gesture = 0;
+            
+            score = 0;
                        
         }
 
 
         // MEMBER METHODS
-        public void GestureMenu()
-        {
-            Console.WriteLine("Pick one of the following options: \n 1- Rock,\n 2- Paper,\n 3- Scissors,\n 4- Lizard,\n 5- Spock");
-            int userInput = int.Parse(Console.ReadLine());
-            Console.WriteLine(userInput);
-            Console.ReadLine();
 
-            //gestures.Add("Rock");
-            //gestures.Add("Paper");
-            //gestures.Add("Scissors");
-            //gestures.Add("Lizard");
-            //gestures.Add("Spock");
-        }
+
+        public abstract void ChooseGesture();
 
 
 
