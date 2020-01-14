@@ -11,7 +11,11 @@ namespace RPSLS
         static void Main(string[] args)
         {
             //game object 
-           
+            Game game = new Game();
+            game.RunGame();
+
+            Console.ReadLine();
         }
+        
     }
 }

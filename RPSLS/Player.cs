@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public abstract class Player : Game
+    public abstract class Player // inheritance (IS A TYPE OF)
     {
-        // MEMBER VARIABLES
+        // MEMBER VARIABLES (HAS A)
         public string name;
-        public string gameType;
         public int score;
         public int gesture; 
         public List<string> gestures = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };        

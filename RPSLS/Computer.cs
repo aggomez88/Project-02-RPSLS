@@ -10,6 +10,8 @@ namespace RPSLS
     {
         // MEMBER VARIABLES
         
+        
+        
         // CONSTRUCTOR
         public Computer()
         {
