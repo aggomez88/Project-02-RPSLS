@@ -11,7 +11,7 @@ namespace RPSLS
         // MEMBER VARIABLES (HAS A)
         public Player p1;
         public Player p2;
-                
+
         List<string> gameRules = new List<string>();
 
         Random random = new Random();
@@ -38,9 +38,9 @@ namespace RPSLS
         // MEMBER METHODS
         public void RunGame()  // master method
         {
-
+            GreetUser();
             GameRules();
-
+            GestureMenu();
 
             
 
@@ -52,6 +52,12 @@ namespace RPSLS
         {
             Console.WriteLine("Hello, would you like to play ROCK, PAPER, SCISSORS, LIZARD, SPOCK...[Y / N]");
             string answer = Console.ReadLine();
+
+            if (answer == "Y")
+            {
+                Console.WriteLine("Lets begin...");
+
+            }
             
         }
         public void GameRules()
@@ -76,7 +82,11 @@ namespace RPSLS
 
         public void CompareGestures()
         {
-
+            if (p1.gesture == p2.gesture)
+            {
+                Console.WriteLine("You have tied, play again...");
+            }
+            //foreach (int gesture in )
         }
         
 

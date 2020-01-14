@@ -9,6 +9,7 @@ namespace RPSLS
     public class Human: Player
     {
         // MEMBER VARIABLES
+        
 
         // CONSTRUCTOR
         public Human(string name)
