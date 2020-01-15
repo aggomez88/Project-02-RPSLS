@@ -23,11 +23,11 @@ namespace RPSLS
         // MEMBERS MEMBER
         public override void ChooseGesture()
         {
-            int gestureIndex = random.Next(0, 5);
+            int gestureIndex = random.Next(5);
             gesture = gestures[gestureIndex];
 
             Console.WriteLine("Computer chose:" + gesture );
-            Console.Read();
+            Console.ReadLine();
 
             //list of gestures from player class will be used for computer 
         }
