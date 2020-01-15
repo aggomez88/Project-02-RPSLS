@@ -14,8 +14,8 @@ namespace RPSLS
         
         public List<string> gameRules = new List<string>();
         public List<string> listOfGestures = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
-        
 
+        public int keepScore;
         public int win = 0;
         public int lose = 0;
         public int tie = 0;
@@ -29,19 +29,20 @@ namespace RPSLS
         // CONSTRUCTOR 
         public Game()
         {
-            p1 = new Human(/*"Player 1"*/);
+            p1 = new Human();
             
-            gameRules.Add("Rock crushes Scissors");
-            gameRules.Add("Scissors cuts Paper");
-            gameRules.Add("Paper covers Rock");
-            gameRules.Add("Rock crushes LIzard");
-            gameRules.Add("Lizard poisons Spock");
-            gameRules.Add("Spock smashes Scissors");
-            gameRules.Add("Scissors decapitates Lizard");
-            gameRules.Add("Lizard eats Paper");
-            gameRules.Add("Paper disproves Spock");
-            gameRules.Add("Spock vaporizes Rock");
+            gameRules.Add("*Rock crushes Scissors");
+            gameRules.Add("*Scissors cuts Paper");
+            gameRules.Add("*Paper covers Rock");
+            gameRules.Add("*Rock crushes LIzard");
+            gameRules.Add("*Lizard poisons Spock");
+            gameRules.Add("*Spock smashes Scissors");
+            gameRules.Add("*Scissors decapitates Lizard");
+            gameRules.Add("*Lizard eats Paper");
+            gameRules.Add("*Paper disproves Spock");
+            gameRules.Add("*Spock vaporizes Rock");
 
+            keepScore = 0;
             
             //listOfGestures.Add("Rock");
             //listOfGestures.Add("Paper");
@@ -57,19 +58,27 @@ namespace RPSLS
         {
             GreetUser();
             GameRules();
-            GestureMenu();           
+            int numberOfPlayers = SetNumberOfPlayers();
+            CreatePlayers(numberOfPlayers);
+            while(p1.score < 2 || p2.score < 2)
+            {
+                p1.ChooseGesture();
+                p2.ChooseGesture();
+                CompareGestures();
+            }
         }
 
         public void GreetUser()
         {
             Console.WriteLine("Hello, would you like to play ROCK, PAPER, SCISSORS, LIZARD, SPOCK...[Y / N]");
-            string answer = Console.ReadLine();
+            string userInput = Console.ReadLine();
 
-            if (answer == "Y")
+            if (userInput == "Y")
             {
                 Console.WriteLine("Lets begin...");
-
+                Console.ReadLine();
             }
+             
             
         }
         public void GameRules()
@@ -79,45 +88,44 @@ namespace RPSLS
             {
                 Console.WriteLine(rule);
             }
-            Console.ReadLine();
-
-            
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadLine();           
         }
-        public void GestureMenu()
+        public int SetNumberOfPlayers()
         {
-            Console.WriteLine("Pick one of the following gestures: \n 1- Rock,\n 2- Paper,\n 3- Scissors,\n 4- Lizard,\n 5- Spock");
-            string gesture = (Console.ReadLine());
-            Console.WriteLine(gesture);
-            Console.ReadLine();
-
+            Console.WriteLine("Press [1] for Human vs. Human,\n Press [2] for Human vs. Computer");
+            int userInput = int.Parse(Console.ReadLine());
+            return userInput;
         }
+        public void CreatePlayers(int numberOfPlayers)
+        {
+            if(numberOfPlayers == 1)
+            {
+                p1 = new Human();
+                p2 = new Computer();
+            }
+            else if (numberOfPlayers == 2)
+            {
+                p1 = new Human();
+                p2 = new Computer();
+            }
+        }
+
+        
 
         public void CompareGestures()
         {
-            string playerChoice = "";
-            bool validInput = false;
 
-            while (!validInput)
-            {
-                
-                            
             if (p1.gesture == p2.gesture)
             {
                 Console.WriteLine("You have tied, play again...");
             }
-            
-            //else if(playerChoice > )
-            //{
-
-            //}
-            
-
+            else if (p1.gesture == "Rock" && p2.gesture == "Scissors" || p2.gesture == "Lizard")
+            {
+                Console.WriteLine("Player 1 wins!");
+                p1.score++;
             }
-            //foreach (int gesture in )
+            
         }
-        
-
-
-        //GameMode 
     }
 }

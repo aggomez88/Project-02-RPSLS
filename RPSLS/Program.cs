@@ -11,16 +11,8 @@ namespace RPSLS
         static void Main(string[] args)
         {
             //game object 
-            //Game game = new Game();            
-            //game.RunGame();
-            //game.GreetUser();
-
-            //Computer computer = new Computer();
-            //computer.ChooseGesture();
-
-            Human human = new Human();
-            human.ChooseGesture();
-              
+            Game game = new Game();
+            game.RunGame();
             Console.ReadLine();
         }
         
