@@ -21,7 +21,7 @@ namespace RPSLS
         // MEMBERS MEMBER
         public override void ChooseGesture()
         {
-
+            //list of gestures from player class will be used for computer 
         }
 
     }
