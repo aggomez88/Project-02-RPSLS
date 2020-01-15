@@ -12,8 +12,9 @@ namespace RPSLS
         public Player p1;
         public Player p2;
         
-        List<string> gameRules = new List<string>();
-        List<string> listOfGestures = new List<string>();
+        public List<string> gameRules = new List<string>();
+        public List<string> listOfGestures = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+        
 
         public int win = 0;
         public int lose = 0;
@@ -24,10 +25,11 @@ namespace RPSLS
         Random random = new Random();
 
 
+
         // CONSTRUCTOR 
         public Game()
         {
-            p1 = new Human("Player 1");
+            p1 = new Human(/*"Player 1"*/);
             
             gameRules.Add("Rock crushes Scissors");
             gameRules.Add("Scissors cuts Paper");
@@ -40,11 +42,12 @@ namespace RPSLS
             gameRules.Add("Paper disproves Spock");
             gameRules.Add("Spock vaporizes Rock");
 
-            listOfGestures.Add("Rock");
-            listOfGestures.Add("Paper");
-            listOfGestures.Add("Scissors");
-            listOfGestures.Add("Lizard");
-            listOfGestures.Add("Spock");
+            
+            //listOfGestures.Add("Rock");
+            //listOfGestures.Add("Paper");
+            //listOfGestures.Add("Scissors");
+            //listOfGestures.Add("Lizard");
+            //listOfGestures.Add("Spock");
 
 
         }
@@ -103,10 +106,11 @@ namespace RPSLS
                 Console.WriteLine("You have tied, play again...");
             }
             
-            else if(playerChoice > )
-            {
+            //else if(playerChoice > )
+            //{
 
-            }
+            //}
+            
 
             }
             //foreach (int gesture in )

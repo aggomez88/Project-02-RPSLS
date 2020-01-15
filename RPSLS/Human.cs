@@ -12,9 +12,9 @@ namespace RPSLS
         
 
         // CONSTRUCTOR
-        public Human(string name)
+        public Human(/*string name*/)
         {
-            this.name = name;
+            //this.name = name;
         }
 
         // MEMBER METHODS
@@ -22,7 +22,8 @@ namespace RPSLS
         
         public override void ChooseGesture()
         {
-            
+            Console.WriteLine("Player 1 chose:" + gestures.Count);
+            Console.ReadLine();
         }
         
     }
